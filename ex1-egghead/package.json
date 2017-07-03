@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dialog-polyfill": "^0.4.7"
+    "dialog-polyfill": "^0.4.7",
+    "wicg-inert": "^1.1.4"
   }
 }
