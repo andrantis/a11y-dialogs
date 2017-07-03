@@ -1,0 +1,56 @@
+/* Dialog */
+
+.dialog {
+    display: none;
+}
+
+.dialog.opened {
+    display: block;
+}
+
+.dialog__window {
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid black;
+    padding: 18px;
+    z-index: 101;
+}
+
+.dialog__mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    opacity: 0.6;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.skip-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.skip-links li a {
+    background-color: #fff;
+    display: block;
+    left: -600000px;
+    position: absolute;
+    padding: 0.5em;
+}
+
+.skip-links li a:focus{
+    left: 0;
+}
+
+[tabindex="-1"]:focus {
+    outline: none;
+}

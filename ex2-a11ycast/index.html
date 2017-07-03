@@ -3,14 +3,9 @@
     <head>
         <title>Example 1 - egghead.io</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="node_modules/dialog-polyfill/dialog-polyfill.css">
     </head>
     <body>
         <div class="wrapper">
-            <!--
-                For more info and guides to better implementation:
-                https://www.bignerdranch.com/blog/web-accessibility-skip-navigation-links/
-            -->
             <ul class="skip-links">
                 <li><a href="#global-nav">Skip to navigation</a></li>
                 <li><a href="#main">Skip to content</a></li>
@@ -20,20 +15,32 @@
                 
             </header>
             <main role="main" id="main" tabindex="-1">
-                <h1>Homepage - egghead example</h1>
+                <h1>Homepage - a11ycast example</h1>
                 <h2><a href="#">Article Title</a><h2>
                 <h2><a href="#">Another Article Title</a><h2>
                 <button id="dialogTrigger">Open dialog</button>
             </main>
             <footer role="contentinfo" id="footer" tabindex="-1">
 
-            </footer>            
+            </footer>
         </div>
-        <dialog aria-labelledby="dialogHeading">
-            <h2 id="dialogHeading">Dialog title</h2>
-            <button type="button" id="closeBtn">Close</button>
-        </dialog>
-        <script src="node_modules/dialog-polyfill/dialog-polyfill.js"></script>
+
+        <!-- Add your modal dialog after the rest of you page content.
+             That way, you can easily 'inert' everything that isn't the modal.-->
+        <div class="dialog" role="dialog" aria-labelledby="dialog_title">
+            <div class="dialog__window">
+                <div>
+                    <h2 id="dialog_title">Dialog Example</h2>
+                </div>
+                <div>
+                    <p>But awesome stuff. It's really aweomse.</p>
+                    <button type="button">Close</button>
+                    <button type="button">Ok</button>
+                </div>
+            </div>
+            <div class="dialog__mask"></div>
+        </div>
+
         <script src="node_modules/wicg-inert/dist/inert.js"></script>
         <script src="script.js"></script>
     </body>
