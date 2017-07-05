@@ -1,3 +1,7 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
 /* Dialog */
 
 .dialog {
@@ -62,5 +66,11 @@
 
 .icon {
     width: 32px;
+    height: 32px;
+}
+
+
+.logo a {
+    display: block;
     height: 32px;
 }
