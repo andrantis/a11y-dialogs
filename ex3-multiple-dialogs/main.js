@@ -1,7 +1,9 @@
+import "babel-polyfill";
+
 document.addEventListener("DOMContentLoaded", pageLoaded);
 
 function pageLoaded(event) {
-    document.querySelectorAll(".js-dialog-trigger").forEach(item => item.addEventListener('click', openDialog));
+    Array.from(document.querySelectorAll(".js-dialog-trigger")).forEach(item => item.addEventListener('click', openDialog));
 }
 
 
@@ -36,7 +38,7 @@ function openDialog() {
     dialogMask.addEventListener('click', closeDialog)
     
     // This is just for demo purposes, you'll probably want to do other actions here.
-    dialogWindow.querySelectorAll('button').forEach(btn => {
+    Array.from(dialogWindow.querySelectorAll('button')).forEach(btn => {
         btn.addEventListener('click', closeDialog);
 
     });
@@ -61,7 +63,7 @@ function closeDialog() {
 
     // Clean up any event listeners.
     dialogMask.removeEventListener('click', closeDialog);
-    dialogWindow.querySelectorAll('button').forEach(btn => {
+    Array.from(dialogWindow.querySelectorAll('button')).forEach(btn => {
         btn.removeEventListener('click', closeDialog);
     });
     document.removeEventListener('keydown', checkCloseDialog);
