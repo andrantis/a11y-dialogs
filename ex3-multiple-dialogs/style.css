@@ -58,3 +58,9 @@
 [tabindex="-1"]:focus {
     outline: none;
 }
+
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
