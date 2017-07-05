@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Multiple dialogs example</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header role="banner" id="global-nav" tabindex="-1">
+                <div class="logo">
+                    <a href="/">&#x1f332;</a>
+                </div>
+                <ul class="skip-links">
+                    <li><a href="#global-nav">Skip to navigation</a></li>
+                    <li><a href="#main">Skip to content</a></li>
+                    <li><a href="#footer">Skip to footer</a></li>
+                </ul>
+                <nav>
+                    <button class="js-dialog-trigger" data-dialog-target="signin">Open dialog sign in</button>
+                    <button class="js-dialog-trigger" data-dialog-target="map">Open dialog map</button>
+                    <button class="js-dialog-trigger" data-dialog-target="search">Open dialog search</button>
+                    <button class="js-dialog-trigger" data-dialog-target="menu">Open dialog menu</button>
+                </nav>
+            </header>
+            <main role="main" id="main" tabindex="-1">
+                <h1>Homepage</h1>
+                <h2><a href="#">Article Title</a><h2>
+                <h2><a href="#">Another Article Title</a><h2>
+            </main>
+            <footer role="contentinfo" id="footer" tabindex="-1">
+                <h3>Footer</h3>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+            </footer>
+        </div>
+
+        <!-- Add your modal dialog after the rest of you page content.
+             That way, you can easily 'inert' everything that isn't the modal.-->
+        <div class="dialog" role="dialog" aria-labelledby="dialog_title_signin" data-dialog="signin">
+            <div class="dialog__window">
+                <div>
+                    <h2 id="dialog_title_signin">Sign In</h2>
+                </div>
+                <div>
+                    <p>Sign in stuff.</p>
+                    <input type="text">
+                    <input type="password">
+                    <button type="button">Close</button>
+                    <button type="button">Ok</button>
+                </div>
+            </div>
+            <div class="dialog__mask"></div>
+        </div>
+
+        <div class="dialog" role="dialog" aria-labelledby="dialog_title_map" data-dialog="map">
+            <div class="dialog__window">
+                <div>
+                    <h2 id="dialog_title_map">Map</h2>
+                </div>
+                <div>
+                    <p>Map stuff.</p>
+                    <input type="text">
+                    <button type="button">Close</button>
+                    <button type="button">Ok</button>
+                </div>
+            </div>
+            <div class="dialog__mask"></div>
+        </div>
+        <div class="dialog" role="dialog" aria-labelledby="dialog_title_search" data-dialog="search">
+            <div class="dialog__window">
+                <div>
+                    <h2 id="dialog_title_search">Search</h2>
+                </div>
+                <div>
+                    <p>Search stuff.</p>
+                    <button type="button">Close</button>
+                    <button type="button">Ok</button>
+                </div>
+            </div>
+            <div class="dialog__mask"></div>
+        </div>
+
+
+        <div class="dialog" role="dialog" aria-labelledby="dialog_title_menu" data-dialog="menu">
+            <div class="dialog__window">
+                <div>
+                    <h2 id="dialog_title_menu">Menu</h2>
+                </div>
+                <div>
+                    <p>all the menu options.</p>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 5</a></li>
+                    </ul>
+                    <button type="button">Ok</button>
+                </div>
+            </div>
+            <div class="dialog__mask"></div>
+        </div>
+
+        <script src="node_modules/wicg-inert/dist/inert.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
