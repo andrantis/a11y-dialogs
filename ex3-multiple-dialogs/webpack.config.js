@@ -1,5 +1,6 @@
 var path = require('path');
- var webpack = require('webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var webpack = require('webpack');
 
  module.exports = {
      entry: ['babel-polyfill', './main.js'],
@@ -7,6 +8,12 @@ var path = require('path');
          path: path.resolve(__dirname, 'build'),
          filename: 'main.bundle.js'
      },
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: 'node_modules/svgxuse/svgxuse.js' },
+            { from: 'node_modules/wicg-inert/dist/inert.js' },
+        ], {copyUnmodified: true})
+    ],
      module: {
          loaders: [
              {
